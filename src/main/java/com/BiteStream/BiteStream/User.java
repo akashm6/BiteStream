@@ -27,6 +27,10 @@ public class User {
 
     private String location;
 
+    private Integer numCoins;
+
+    private Integer achievementsCompleted;
+
     protected User() {
     }
 
