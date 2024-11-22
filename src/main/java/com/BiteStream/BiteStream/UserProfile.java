@@ -1,7 +1,6 @@
 package com.BiteStream.BiteStream;
 
-import java.util.ArrayList;
-
+import java.util.List;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,12 +10,16 @@ import lombok.*;
 @NoArgsConstructor
 public class UserProfile {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
     private String bio;
 
     @ElementCollection
-    private ArrayList<String> cuisines;
+    private List<String> cuisines;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user_id")
-    private ArrayList<Review> reviews;
+    private List<Review> reviews;
 
 }
